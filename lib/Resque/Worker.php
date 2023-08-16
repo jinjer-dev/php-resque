@@ -137,7 +137,7 @@ class Resque_Worker
 		}
 
 		list($hostname, $pid, $queues) = explode(':', $workerId, 3);
-		$queues = explode(',', $queues);
+		$queues = explode(',', (string)$queues);
 		$worker = new self($queues);
 		$worker->setId($workerId);
 		return $worker;
